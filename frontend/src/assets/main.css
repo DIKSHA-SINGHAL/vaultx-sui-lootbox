@@ -1,0 +1,118 @@
+/*
+ * assets/main.css
+ * ─────────────────────────────────────────────────────────────
+ * Global CSS: resets, CSS custom properties (variables), fonts,
+ * and animations shared across all components.
+ *
+ * CSS CUSTOM PROPERTIES (variables):
+ * Defined on :root, accessible anywhere as var(--name).
+ * Changing --green here changes it everywhere.
+ *
+ * WHY USE CSS VARIABLES INSTEAD OF SASS/LESS?
+ * Native CSS variables work in every modern browser, require no
+ * build step, and can be read/changed by JavaScript at runtime.
+ */
+
+/* ── Reset ───────────────────────────────────────────────────
+   Remove browser default margins/padding/box-sizing quirks.
+   Everything starts from a clean slate.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Custom Properties ───────────────────────────────────
+   All colours and font stacks in one place.
+*/
+:root {
+  /* Background layers (darkest to lightest) */
+  --void:     #080809;   /* page background — near black */
+  --surface:  #0e0e10;   /* cards, panels */
+  --raised:   #141416;   /* elevated elements */
+
+  /* Borders */
+  --border:   rgba(255,255,255,0.06);   /* very subtle dividers */
+  --border2:  rgba(255,255,255,0.12);   /* slightly more visible */
+
+  /* Text */
+  --white:  #f0f0f0;     /* primary text */
+  --grey1:  #a0a0a8;     /* secondary text */
+  --grey2:  #5a5a64;     /* muted / placeholder text */
+
+  /* Rarity colours (match the game-card CSS classes) */
+  --common:    #6b7280;  /* grey */
+  --rare:      #38bdf8;  /* sky blue */
+  --epic:      #a78bfa;  /* purple */
+  --legendary: #fbbf24;  /* amber gold */
+
+  /* Brand accent */
+  --green:     #39ff6e;             /* main CTA / accent */
+  --green-dim: rgba(57,255,110,0.06); /* subtle green bg */
+
+  /* Typography */
+  --font-ui:   'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ── Base typography ──────────────────────────────────────── */
+html { font-size: 16px; }
+
+body {
+  font-family: var(--font-ui);
+  background: var(--void);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;  /* crisper text on macOS/iOS */
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;                   /* no horizontal scroll */
+}
+
+/* ── Element resets ───────────────────────────────────────── */
+button {
+  font-family: var(--font-ui);
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+  line-height: 1;
+}
+
+input, textarea {
+  font-family: var(--font-ui);
+  color: var(--white);
+}
+
+a { color: var(--green); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ── Shared animations ────────────────────────────────────── */
+
+/* Landing screen logo pulse glow */
+@keyframes pulseGlow {
+  0%,  100% { text-shadow: 0 0 20px rgba(57,255,110,0.3); }
+  50%        { text-shadow: 0 0 50px rgba(57,255,110,0.7), 0 0 90px rgba(57,255,110,0.3); }
+}
+
+/* Fade in + slide up (modals, toast) */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Card reveal animation */
+@keyframes revealIn {
+  from { opacity: 0; transform: scale(0.9) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────
+   Style the scrollbar to match the dark theme (Chrome/Edge only).
+   Firefox uses scrollbar-color property instead.
+*/
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 2px;
+}

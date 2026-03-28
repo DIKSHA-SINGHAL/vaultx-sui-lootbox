@@ -1,0 +1,18 @@
+[package]
+name    = "vaultx"
+version = "1.0.0"
+edition = "2024.beta"
+license = "MIT"           
+authors = ["dikshasinghal996@gmail.com"]
+
+# ── Dependencies ──────────────────────────────────────────────
+# Sui framework provides: object, transfer, tx_context, coin,
+# balance, clock, random, dynamic_field, event, sui::sui (SUI type)
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
+# ── Named addresses ───────────────────────────────────────────
+# "vaultx" maps to 0x0 before deployment.
+# After `sui client publish`, replace 0x0 with the real package address.
+[addresses]
+vaultx = "0x0"

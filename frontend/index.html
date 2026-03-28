@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Tab icon: lock emoji instead of the Vite default "V" logo -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔐</text></svg>" />
+
+    <!-- Full-screen on mobile, no pinch-zoom issues -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VaultX — On-Chain Loot Boxes</title>
+
+    <!-- Fonts used in the design -->
+    <!-- Rajdhani: logo, headings, prices -->
+    <!-- Exo 2: all body text, buttons, labels -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* Prevent white flash before Vue mounts */
+      html, body { margin: 0; padding: 0; background: #0a0a0f; }
+      #app { min-height: 100vh; }
+    </style>
+  </head>
+  <body>
+    <!-- Vue replaces this div with the app on mount -->
+    <div id="app"></div>
+
+    <!-- Vite entry point — keep at bottom of body -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

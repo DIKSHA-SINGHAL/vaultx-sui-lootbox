@@ -17,8 +17,8 @@ A fully decentralized loot box game where players spend SUI tokens to buy myster
 
 ## Deployed Addresses
 
-- **Package:** `0xc6dc2e4cdd6c9a9a450f9e5efeeb10f37e4660c4b5acfad14606782e82c547d8`
-- **GameConfig:** `0xb8bbe5a2d1190ff0927a0491e833c636c026babd3221aa372fda70d4cc3c8673`
+- **Package:** `0xb83f3fb3032bbe3441f8830e29563706d344c3dbd00685cecf196f625c8c458f`
+- **GameConfig:** `0xf4f617814cfb7296ef157e6adc98ac9ec794a6646386b13768c9c8ffe14d2a1c`
 - **Network:** Sui Testnet
 
 ## Features
